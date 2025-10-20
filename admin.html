@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - Mini E-Commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="admin-login">
+    <h2>Admin Login</h2>
+    <input type="text" id="admin-username" placeholder="Username">
+    <input type="password" id="admin-password" placeholder="Password">
+    <button onclick="loginAdmin()">Login</button>
+    <p id="login-error"></p>
+  </div>
+
+  <div id="admin-dashboard" class="hidden">
+    <h2>Dashboard Admin</h2>
+    <button onclick="logoutAdmin()">Logout</button>
+    <h3>Tambah Produk Baru</h3>
+    <input type="text" id="new-product-name" placeholder="Nama Produk">
+    <input type="number" id="new-product-price" placeholder="Harga Produk">
+    <input type="text" id="new-product-image" placeholder="URL Gambar">
+    <button onclick="addProduct()">Tambah Produk</button>
+
+    <h3>Daftar Produk</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Harga</th>
+          <th>Gambar</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="product-list-admin"></tbody>
+    </table>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
