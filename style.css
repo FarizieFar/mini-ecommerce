@@ -47,44 +47,72 @@
     margin-left: 4px;
   }
   
-  /* Produk */
-  .products {
+  /* Grid Produk */
+.products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
     padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
+  /* Card Produk */
   .product-card {
     background: var(--white);
     padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   }
   
   .product-card img {
     width: 100%;
-    border-radius: 8px;
+    height: 220px;              /* Ukuran gambar seragam */
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover img {
+    transform: scale(1.05);
   }
   
   .product-card h3 {
     margin-top: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--dark);
   }
   
   .product-card p {
     color: var(--dark);
     margin: 0.5rem 0;
+    font-weight: bold;
   }
   
   .product-card button {
     background: var(--primary);
     color: var(--white);
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
   }
+  
+  .product-card button:hover {
+    background: #0056b3; /* warna sedikit lebih gelap saat hover */
+  }
+  
   
   /* Cart Overlay */
   .cart-overlay {
