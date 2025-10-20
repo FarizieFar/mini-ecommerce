@@ -4,39 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Panel - Mini E-Commerce</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="admin-login">
-    <h2>Admin Login</h2>
-    <input type="text" id="admin-username" placeholder="Username">
-    <input type="password" id="admin-password" placeholder="Password">
-    <button onclick="loginAdmin()">Login</button>
-    <p id="login-error"></p>
-  </div>
+  <header>
+    <div class="logo">Admin Panel</div>
+    <nav>
+      <button onclick="logoutAdmin()">Logout</button>
+    </nav>
+  </header>
 
-  <div id="admin-dashboard" class="hidden">
-    <h2>Dashboard Admin</h2>
-    <button onclick="logoutAdmin()">Logout</button>
-    <h3>Tambah Produk Baru</h3>
-    <input type="text" id="new-product-name" placeholder="Nama Produk">
-    <input type="number" id="new-product-price" placeholder="Harga Produk">
-    <input type="text" id="new-product-image" placeholder="URL Gambar">
-    <button onclick="addProduct()">Tambah Produk</button>
+  <!-- Login Admin -->
+  <section id="admin-login" class="products" style="max-width: 400px; margin: 3rem auto; text-align:center;">
+    <h2 style="margin-bottom: 1rem;">Login Admin</h2>
+    <input type="text" id="admin-username" placeholder="Username" style="padding: 0.5rem; width: 100%; margin-bottom: 0.5rem;">
+    <input type="password" id="admin-password" placeholder="Password" style="padding: 0.5rem; width: 100%; margin-bottom: 0.5rem;">
+    <button onclick="loginAdmin()" style="width: 100%;">Login</button>
+    <p id="login-error" style="color: red; margin-top: 0.5rem;"></p>
+  </section>
 
-    <h3>Daftar Produk</h3>
-    <table>
+  <!-- Dashboard Admin -->
+  <section id="admin-dashboard" class="hidden" style="padding: 2rem;">
+    <h2 style="margin-bottom: 1rem;">Tambah Produk Baru</h2>
+    <div style="max-width: 500px;">
+      <input type="text" id="new-product-name" placeholder="Nama Produk" style="padding: 0.5rem; width: 100%; margin-bottom: 0.5rem;">
+      <input type="number" id="new-product-price" placeholder="Harga Produk" style="padding: 0.5rem; width: 100%; margin-bottom: 0.5rem;">
+      <input type="text" id="new-product-image" placeholder="URL Gambar Produk" style="padding: 0.5rem; width: 100%; margin-bottom: 0.5rem;">
+      <button onclick="addProduct()" style="width: 100%; margin-bottom: 1rem;">Tambah Produk</button>
+    </div>
+
+    <h2>Daftar Produk</h2>
+    <table style="width: 100%; margin-top: 1rem; border-collapse: collapse;">
       <thead>
-        <tr>
-          <th>Nama</th>
-          <th>Harga</th>
-          <th>Gambar</th>
-          <th>Aksi</th>
+        <tr style="background: var(--primary); color: var(--white);">
+          <th style="padding: 8px;">Nama</th>
+          <th style="padding: 8px;">Harga</th>
+          <th style="padding: 8px;">Gambar</th>
+          <th style="padding: 8px;">Aksi</th>
         </tr>
       </thead>
       <tbody id="product-list-admin"></tbody>
     </table>
-  </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Mini E-Commerce Admin</p>
+  </footer>
 
   <script src="admin.js"></script>
 </body>

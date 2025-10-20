@@ -9,7 +9,7 @@ function loginAdmin() {
   if (username === USERNAME && password === PASSWORD) {
     document.getElementById('admin-login').classList.add('hidden');
     document.getElementById('admin-dashboard').classList.remove('hidden');
-    loadProducts();
+    loadProductsAdmin();
   } else {
     errorText.textContent = "Username atau password salah!";
   }
@@ -25,6 +25,11 @@ function addProduct() {
   const price = document.getElementById('new-product-price').value;
   const image = document.getElementById('new-product-image').value;
 
+  if (!name || !price || !image) {
+    alert("Harap isi semua kolom!");
+    return;
+  }
+
   const products = JSON.parse(localStorage.getItem('products')) || [];
   products.push({ name, price, image });
   localStorage.setItem('products', JSON.stringify(products));
@@ -33,17 +38,17 @@ function addProduct() {
   document.getElementById('new-product-price').value = '';
   document.getElementById('new-product-image').value = '';
 
-  loadProducts();
+  loadProductsAdmin();
 }
 
 function deleteProduct(index) {
   const products = JSON.parse(localStorage.getItem('products')) || [];
   products.splice(index, 1);
   localStorage.setItem('products', JSON.stringify(products));
-  loadProducts();
+  loadProductsAdmin();
 }
 
-function loadProducts() {
+function loadProductsAdmin() {
   const products = JSON.parse(localStorage.getItem('products')) || [];
   const tableBody = document.getElementById('product-list-admin');
   tableBody.innerHTML = '';
@@ -51,10 +56,10 @@ function loadProducts() {
   products.forEach((product, index) => {
     const row = `
       <tr>
-        <td>${product.name}</td>
-        <td>Rp ${product.price}</td>
-        <td><img src="${product.image}" alt="${product.name}" width="50"></td>
-        <td><button onclick="deleteProduct(${index})">Hapus</button></td>
+        <td style="padding: 8px;">${product.name}</td>
+        <td style="padding: 8px;">Rp ${product.price}</td>
+        <td style="padding: 8px;"><img src="${product.image}" alt="${product.name}" width="50"></td>
+        <td style="padding: 8px;"><button onclick="deleteProduct(${index})" style="background:red;color:white;border:none;padding:4px 8px;border-radius:4px;">Hapus</button></td>
       </tr>
     `;
     tableBody.innerHTML += row;
