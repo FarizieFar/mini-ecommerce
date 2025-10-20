@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini E-Commerce</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 🔸 Navbar -->
+  <header>
+    <h1 class="logo">MiniShop 🛍️</h1>
+    <nav>
+      <button id="cart-btn">🛒 <span id="cart-count">0</span></button>
+    </nav>
+  </header>
+
+  <!-- 🔸 Produk -->
+  <section class="products" id="product-list">
+    <!-- Produk akan dimasukkan via JS -->
+  </section>
+
+  <!-- 🔸 Keranjang Belanja -->
+  <div class="cart-overlay" id="cart-overlay">
+    <div class="cart">
+      <h2>Keranjang Belanja</h2>
+      <ul id="cart-items"></ul>
+      <div class="cart-total">
+        <p>Total: <span id="total-price">Rp0</span></p>
+      </div>
+      <button id="checkout-btn">Checkout</button>
+      <button id="close-cart">Tutup</button>
+    </div>
+  </div>
+
+  <!-- 🔸 Footer -->
+  <footer>
+    <p>© 2025 MiniShop | Dibuat oleh Alfarizi 🧑‍💻</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

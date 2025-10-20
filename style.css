@@ -1,0 +1,150 @@
+:root {
+    --primary: #007bff;
+    --background: #f5f5f5;
+    --white: #fff;
+    --dark: #333;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background: var(--background);
+  }
+  
+  /* Navbar */
+  header {
+    background: var(--primary);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  nav button {
+    background: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  #cart-count {
+    background: red;
+    color: var(--white);
+    border-radius: 50%;
+    padding: 2px 8px;
+    margin-left: 4px;
+  }
+  
+  /* Produk */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  
+  .product-card {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .product-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .product-card h3 {
+    margin-top: 0.5rem;
+  }
+  
+  .product-card p {
+    color: var(--dark);
+    margin: 0.5rem 0;
+  }
+  
+  .product-card button {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  /* Cart Overlay */
+  .cart-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: flex-end;
+  }
+  
+  .cart {
+    background: var(--white);
+    width: 300px;
+    padding: 1.5rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cart h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .cart ul {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .cart-total {
+    margin: 1rem 0;
+    font-weight: bold;
+  }
+  
+  #checkout-btn, #close-cart {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  #checkout-btn {
+    background: var(--primary);
+    color: var(--white);
+  }
+  
+  #close-cart {
+    background: #ccc;
+  }
+  
+  /* Footer */
+  footer {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
